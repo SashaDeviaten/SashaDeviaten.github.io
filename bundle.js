@@ -10601,7 +10601,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var AjaxHandlerScript = "http://fe.it-academy.by/AjaxStringStorage2.php";
+var AjaxHandlerScript = "https://fe.it-academy.by/AjaxStringStorage2.php";
 var StringName = 'DEVIATEN_CRAZY_MIND_RECORDS';
 var lastRecords = void 0;
 
@@ -11168,9 +11168,9 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var AjaxHandlerScript = "http://fe.it-academy.by/AjaxStringStorage2.php";
+var AjaxHandlerScript = "https://fe.it-academy.by/AjaxStringStorage2.php";
 var StringName = 'DEVIATEN_CRAZY_MIND_RECORDS';
-var updatePassword = '3333';
+var updatePassword = Math.random();
 var lastRecords = void 0;
 var seconds = void 0;
 var userName = null;
