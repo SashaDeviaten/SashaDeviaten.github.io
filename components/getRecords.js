@@ -3,7 +3,7 @@
 
 import $ from "jquery";
 
-const AjaxHandlerScript="http://fe.it-academy.by/AjaxStringStorage2.php";
+const AjaxHandlerScript="https://fe.it-academy.by/AjaxStringStorage2.php";
 const StringName='DEVIATEN_CRAZY_MIND_RECORDS';
 let updatePassword='3333';
 let lastRecords;
