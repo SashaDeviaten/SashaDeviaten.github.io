@@ -5,7 +5,7 @@ import $ from "jquery";
 
 const AjaxHandlerScript="https://fe.it-academy.by/AjaxStringStorage2.php";
 const StringName='DEVIATEN_CRAZY_MIND_RECORDS';
-let updatePassword='3333';
+let updatePassword=Math.random();
 let lastRecords;
 let seconds;
 let userName = null;
