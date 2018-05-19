@@ -10715,7 +10715,6 @@ function buildGame() {
     var gameBlock = document.createElement('div');
 
     var correctAudio = new Audio();
-    correctAudio.src = "./audio/correct.wav";
 
     function correctSound() {
         incorrectAudio.pause();
@@ -10724,7 +10723,6 @@ function buildGame() {
     }
 
     var incorrectAudio = new Audio();
-    incorrectAudio.src = "./audio/incorrect.mp3";
 
     function incorrectSound() {
         correctAudio.pause();
@@ -10733,7 +10731,6 @@ function buildGame() {
     }
 
     var gameOverAudio = new Audio();
-    gameOverAudio.src = "./audio/game-over.wav";
 
     function gameOverSound() {
         incorrectAudio.pause();
@@ -10741,11 +10738,17 @@ function buildGame() {
     }
 
     var winAudio = new Audio();
-    winAudio.src = "./audio/win.wav";
 
     function winSound() {
         correctAudio.pause();
         winAudio.play();
+    }
+
+    if (correctAudio.canPlayType("audio/mpeg") == "probably") {
+        correctAudio.src = "./audio/correct.wav";
+        incorrectAudio.src = "./audio/incorrect.mp3";
+        gameOverAudio.src = "./audio/game-over.wav";
+        winAudio.src = "./audio/win.wav";
     }
 
     var rounds = 0;
@@ -10782,7 +10785,7 @@ function buildGame() {
                 testDOM.style.animationName = 'slowShow';
                 break;
             default:
-                gameBlock.innerHTML = 'Версия находиться на доработке, приносим свои извенения';
+                gameBlock.innerHTML = 'Версия находиться на доработке, приносим свои извинения';
 
         }
     }
