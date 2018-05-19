@@ -6,7 +6,20 @@ import ShapeTest from "./ShapeTest";
 import {restoreInfo, storeInfo} from "./getRecords";
 import './gameOverBlock.css';
 
-let tests = require('../tests.json');
+// let tests = require('../tests.json');
+let tests={
+    "colorTest": {
+        "red": "красный",
+        "blue": "синий",
+        "green": "зелёный",
+        "yellow": "жёлтый"
+    },
+    "shapeTest": {
+        "line": "прямой текст",
+        "path-top": "выгнутый кверху текст",
+        "path-bottom": "вогнутый книзу текст"
+    }
+}
 
 function buildGame() {
 
