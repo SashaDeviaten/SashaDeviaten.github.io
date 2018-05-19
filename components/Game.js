@@ -6,20 +6,7 @@ import ShapeTest from "./ShapeTest";
 import {restoreInfo, storeInfo} from "./getRecords";
 import './gameOverBlock.css';
 
-// let tests = require('../tests.json');
-let tests={
-    "colorTest": {
-        "red": "красный",
-        "blue": "синий",
-        "green": "зелёный",
-        "yellow": "жёлтый"
-    },
-    "shapeTest": {
-        "line": "прямой текст",
-        "path-top": "выгнутый кверху текст",
-        "path-bottom": "вогнутый книзу текст"
-    }
-}
+let tests = require('../tests.json');
 
 function buildGame() {
 
@@ -85,6 +72,9 @@ function buildGame() {
                 gameBlock.appendChild(testDOM);
                 testDOM.style.animationName = 'slowShow';
                 break;
+            default :
+                gameBlock.innerHTML='Версия находиться на доработке, приносим свои извенения';
+
         }
     }
 
