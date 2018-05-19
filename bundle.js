@@ -65,12 +65,6 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
-
-module.exports = {"colorTest":{"red":"красный","blue":"синий","green":"зелёный","yellow":"жёлтый"},"shapeTest":{"line":"прямой текст","path-top":"выгнутый кверху текст","path-bottom":"вогнутый книзу текст"}}
-
-/***/ }),
-/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10441,13 +10435,13 @@ return jQuery;
 
 
 /***/ }),
-/* 2 */
+/* 1 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10463,6 +10457,12 @@ var randomInt = function randomInt(min, max) {
 };
 
 exports.randomInt = randomInt;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+module.exports = {"colorTest":{"red":"красный","blue":"синий","green":"зелёный","yellow":"жёлтый"},"shapeTest":{"line":"прямой текст","path-top":"выгнутый кверху текст","path-bottom":"вогнутый книзу текст"}}
 
 /***/ }),
 /* 4 */
@@ -10595,7 +10595,7 @@ exports.buildRecordBlock = undefined;
 
 __webpack_require__(11);
 
-var _jquery = __webpack_require__(1);
+var _jquery = __webpack_require__(0);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -10701,7 +10701,20 @@ __webpack_require__(16);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var tests = __webpack_require__(0);
+// let tests = require('../tests.json');
+var tests = {
+    "colorTest": {
+        "red": "красный",
+        "blue": "синий",
+        "green": "зелёный",
+        "yellow": "жёлтый"
+    },
+    "shapeTest": {
+        "line": "прямой текст",
+        "path-top": "выгнутый кверху текст",
+        "path-bottom": "вогнутый книзу текст"
+    }
+};
 
 function buildGame() {
 
@@ -10916,13 +10929,13 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(2);
+__webpack_require__(1);
 
-var _randomInt = __webpack_require__(3);
+var _randomInt = __webpack_require__(2);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var tests = __webpack_require__(0);
+var tests = __webpack_require__(3);
 
 var ColorTest = function () {
     function ColorTest(cbCheckAnswer) {
@@ -11020,13 +11033,13 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(2);
+__webpack_require__(1);
 
-var _randomInt = __webpack_require__(3);
+var _randomInt = __webpack_require__(2);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var tests = __webpack_require__(0);
+var tests = __webpack_require__(3);
 
 var ShapeTest = function () {
     function ShapeTest(cbCheckAnswer) {
@@ -11162,7 +11175,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.storeInfo = exports.lastRecords = undefined;
 
-var _jquery = __webpack_require__(1);
+var _jquery = __webpack_require__(0);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
