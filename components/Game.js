@@ -73,7 +73,7 @@ function buildGame() {
                 testDOM.style.animationName = 'slowShow';
                 break;
             default :
-                gameBlock.innerHTML='Версия находиться на доработке, приносим свои извенения';
+                gameBlock.innerHTML='Версия находиться на доработке, приносим свои извинения';
 
         }
     }
