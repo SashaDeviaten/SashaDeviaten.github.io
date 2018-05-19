@@ -83,7 +83,7 @@ function setRecord() {
         return;
     }
         for (let i = 0; i <lastRecords.length; i++){
-            if (seconds < lastRecords[i]["seconds"]){
+            if (seconds < lastRecords[i]["seconds"] && lastRecords.length<10){
                 lastRecords.splice(i, 0, {name: userName, seconds: seconds });
                 if (lastRecords.length > 10){
                     lastRecords.pop();
