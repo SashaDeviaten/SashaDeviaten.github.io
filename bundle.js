@@ -11162,7 +11162,6 @@ exports.default = ShapeTest;
 "use strict";
 
 
-
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -11245,7 +11244,7 @@ function setRecord() {
         return;
     }
     for (var i = 0; i < lastRecords.length; i++) {
-        if (seconds < lastRecords[i]["seconds"] && lastRecords.length < 10) {
+        if (seconds < lastRecords[i]["seconds"] || lastRecords.length < 10) {
             lastRecords.splice(i, 0, { name: userName, seconds: seconds });
             if (lastRecords.length > 10) {
                 lastRecords.pop();
@@ -11257,6 +11256,7 @@ function setRecord() {
 }
 
 function updateAJAX(lastRecords) {
+    console.log('updateAJAX', lastRecords);
     _jquery2.default.ajax({
         url: AjaxHandlerScript, type: 'POST', cache: false, dataType: 'json',
         data: { f: 'UPDATE', n: StringName, v: JSON.stringify(lastRecords), p: updatePassword },
