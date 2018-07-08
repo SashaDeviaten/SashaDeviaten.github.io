@@ -83,20 +83,22 @@ function setRecord() {
         location.hash = 'Main';
         return;
     }
-    for (let i = 0; i < lastRecords.length; i++) {
-        if (seconds < lastRecords[i]["seconds"] || lastRecords.length < 10) {
-            lastRecords.splice(i, 0, {name: userName, seconds: seconds});
-            if (lastRecords.length > 10) {
+    if (lastRecords.length < 10) {
+        lastRecords.push({name: userName, seconds: seconds})
+    }
+    else {
+        for (let i = 0; i < lastRecords.length; i++) {
+            if (seconds < lastRecords[i]["seconds"]) {
+                lastRecords.splice(i, 0, {name: userName, seconds: seconds});
                 lastRecords.pop();
+                break;
             }
-            break;
         }
     }
     updateAJAX(lastRecords);
 }
 
 function updateAJAX(lastRecords) {
-    console.log('updateAJAX', lastRecords)
     $.ajax({
             url: AjaxHandlerScript, type: 'POST', cache: false, dataType: 'json',
             data: {f: 'UPDATE', n: StringName, v: JSON.stringify(lastRecords), p: updatePassword},
