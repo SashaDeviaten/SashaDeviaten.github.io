@@ -58,9 +58,11 @@ export default class ShapeTest {
 
     render() {
         let testBlock = document.createElement('div');
-        testBlock.className = 'testBlock';
+        testBlock.className = 'testBlock container';
+        let questionBlock = document.createElement('div');
+        questionBlock.className='row';
         let question = document.createElement('div');
-        question.className = 'question';
+        question.className = 'question col-12';
         let shapes = Object.keys(this.test);
         let texts = Object.values(this.test);
         let mainOption = texts[randomInt(0, texts.length - 1)];
@@ -70,9 +72,10 @@ export default class ShapeTest {
         let questionMainOption = document.createElement('div');
         questionMainOption.className = 'questionMainOption';
         questionMainOption.innerHTML = mainOption;
+        questionBlock.appendChild(question);
         question.appendChild(questionHeader);
         question.appendChild(questionMainOption);
-        testBlock.appendChild(question);
+        testBlock.appendChild(questionBlock);
         let rightAnswersAmount = 0;
         let amountToAdd = 9 - shapes.length;
         while (amountToAdd > 0) {
@@ -80,8 +83,6 @@ export default class ShapeTest {
             texts.splice(randomInt(0, texts.length), 0, texts[randomInt(0, texts.length - 1)]);
             --amountToAdd
         }
-        let container = document.createElement('div');
-        container.className = 'container';
         let answerBlock = document.createElement('div');
         answerBlock.className = 'row';
         for (let i = 1; i <= 9; i++) {
@@ -108,8 +109,7 @@ export default class ShapeTest {
             answer.addEventListener('touchend', this.touchEnd);
             answerBlock.appendChild(answer);
         }
-        container.appendChild(answerBlock);
-        testBlock.appendChild(container);
+        testBlock.appendChild(answerBlock);
         return [testBlock, mainOption, rightAnswersAmount]
     }
 

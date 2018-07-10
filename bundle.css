@@ -2053,7 +2053,7 @@ html {
 }
 
 .answer {
-    display: inline-block;
+    /*display: inline-block;*/
     cursor: pointer;
     text-align: center;
     /*width: 30%;*/
@@ -2089,6 +2089,9 @@ html {
     .answer {
         height: 50px;
         line-height: 50px;
+    }
+    .testBlock {
+        max-width: 100%;
     }
 }
 @media (max-width: 720px) {

@@ -10963,9 +10963,11 @@ var ColorTest = function () {
         key: 'render',
         value: function render() {
             var testBlock = document.createElement('div');
-            testBlock.className = 'testBlock';
+            testBlock.className = 'testBlock container';
+            var questionBlock = document.createElement('div');
+            questionBlock.className = 'row';
             var question = document.createElement('div');
-            question.className = 'question';
+            question.className = 'question  col-12';
             var colors = Object.keys(this.test);
             var colorsNames = Object.values(this.test);
             var mainOption = colorsNames[(0, _randomInt.randomInt)(0, colorsNames.length - 1)];
@@ -10975,10 +10977,11 @@ var ColorTest = function () {
             var questionMainOption = document.createElement('div');
             questionMainOption.className = 'questionMainOption';
             questionMainOption.innerHTML = mainOption;
+            questionBlock.appendChild(question);
             question.appendChild(questionHeader);
             question.appendChild(questionMainOption);
 
-            testBlock.appendChild(question);
+            testBlock.appendChild(questionBlock);
             var rightAnswersAmount = 0;
             var amountToAdd = 9 - colors.length;
             while (amountToAdd > 0) {
@@ -10986,13 +10989,11 @@ var ColorTest = function () {
                 colorsNames.splice((0, _randomInt.randomInt)(0, colorsNames.length), 0, colorsNames[(0, _randomInt.randomInt)(0, colorsNames.length - 1)]);
                 --amountToAdd;
             }
-            var container = document.createElement('div');
-            container.className = 'container';
             var answerBlock = document.createElement('div');
             answerBlock.className = 'row';
             for (var i = 1; i <= 9; i++) {
                 var answer = document.createElement('div');
-                answer.className = 'answer col-12 col-md-6 col-lg-4';
+                answer.className = 'answer col-lg-4 col-md-6 col-12 ';
                 answer.style.color = colors.shift();
                 answer.innerHTML = colorsNames.shift();
                 if (answer.innerHTML === mainOption || this.test[answer.style.color] === mainOption) rightAnswersAmount++;
@@ -11002,8 +11003,8 @@ var ColorTest = function () {
                 answer.addEventListener('touchend', this.touchEnd);
                 answerBlock.appendChild(answer);
             }
-            container.appendChild(answerBlock);
-            testBlock.appendChild(container);
+
+            testBlock.appendChild(answerBlock);
             return [testBlock, mainOption, rightAnswersAmount];
         }
     }]);
@@ -11094,9 +11095,11 @@ var ShapeTest = function () {
         key: 'render',
         value: function render() {
             var testBlock = document.createElement('div');
-            testBlock.className = 'testBlock';
+            testBlock.className = 'testBlock container';
+            var questionBlock = document.createElement('div');
+            questionBlock.className = 'row';
             var question = document.createElement('div');
-            question.className = 'question';
+            question.className = 'question col-12';
             var shapes = Object.keys(this.test);
             var texts = Object.values(this.test);
             var mainOption = texts[(0, _randomInt.randomInt)(0, texts.length - 1)];
@@ -11106,9 +11109,10 @@ var ShapeTest = function () {
             var questionMainOption = document.createElement('div');
             questionMainOption.className = 'questionMainOption';
             questionMainOption.innerHTML = mainOption;
+            questionBlock.appendChild(question);
             question.appendChild(questionHeader);
             question.appendChild(questionMainOption);
-            testBlock.appendChild(question);
+            testBlock.appendChild(questionBlock);
             var rightAnswersAmount = 0;
             var amountToAdd = 9 - shapes.length;
             while (amountToAdd > 0) {
@@ -11116,8 +11120,6 @@ var ShapeTest = function () {
                 texts.splice((0, _randomInt.randomInt)(0, texts.length), 0, texts[(0, _randomInt.randomInt)(0, texts.length - 1)]);
                 --amountToAdd;
             }
-            var container = document.createElement('div');
-            container.className = 'container';
             var answerBlock = document.createElement('div');
             answerBlock.className = 'row';
             for (var i = 1; i <= 9; i++) {
@@ -11144,8 +11146,7 @@ var ShapeTest = function () {
                 answer.addEventListener('touchend', this.touchEnd);
                 answerBlock.appendChild(answer);
             }
-            container.appendChild(answerBlock);
-            testBlock.appendChild(container);
+            testBlock.appendChild(answerBlock);
             return [testBlock, mainOption, rightAnswersAmount];
         }
     }]);

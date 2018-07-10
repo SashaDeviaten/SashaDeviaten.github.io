@@ -35,7 +35,7 @@
 }
 
 .answer {
-    display: inline-block;
+    /*display: inline-block;*/
     cursor: pointer;
     text-align: center;
     /*width: 30%;*/
@@ -71,6 +71,9 @@
     .answer {
         height: 50px;
         line-height: 50px;
+    }
+    .testBlock {
+        max-width: 100%;
     }
 }
 @media (max-width: 720px) {
