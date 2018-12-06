@@ -40309,7 +40309,6 @@ var Page_Admin = function (_PureComponent) {
             var mainClassName = this.mainClassName;
             var admin = this.props.admin;
 
-            console.log('render', this.state.codes);
 
             return _react2.default.createElement(
                 'div',
