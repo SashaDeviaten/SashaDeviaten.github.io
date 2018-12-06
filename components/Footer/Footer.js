@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.scss'
+import {NavLink} from "react-router-dom";
 
 class Footer extends React.PureComponent {
 
@@ -41,7 +42,7 @@ class Footer extends React.PureComponent {
                             </div>
                         </div>
                             <div className={'creator'}>
-                                Powered by <br/>
+                                <NavLink to={'/admin'} onClick={()=> {this.setState()}}>Powered by</NavLink><br/>
                                 <a href={'https://vk.com/id133303052'} className={'link'} target="_blank">
                                 <img src = '../../images/VK.png'/>
                                 Sasha Deviaten
