@@ -63,7 +63,6 @@ class Page_Admin extends PureComponent {
         const {mainClassName} = this;
 
         const {admin} = this.props;
-        console.log('render', this.state.codes)
 
         return (
 
