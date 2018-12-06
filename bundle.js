@@ -40222,12 +40222,7 @@ var Page_Admin = function (_PureComponent) {
         }, _this.mainClassName = 'Page_Admin', _this.passsword = null, _this.setPassword = function (e) {
             if (e.target.value) _this.password = e.target.value;
         }, _this.checkPassword = function () {
-            if (_this.password === 'Vojstom') {
-                _this.props.verifiedAdmin();
-                (0, _fetch.getCodes)().then(function (codes) {
-                    return _this.setState({ codes: codes });
-                });
-            } else {
+            if (_this.password === 'Vojstom') _this.props.verifiedAdmin();else {
                 (0, _CustomConfirm.customConfirm)({
                     content: 'Неверный пароль',
                     confirm: 'Ок',
@@ -40300,8 +40295,13 @@ var Page_Admin = function (_PureComponent) {
     _createClass(Page_Admin, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
+            var _this3 = this;
+
             window.scrollTo(0, 360);
             this.props.blockFlyGif();
+            (0, _fetch.getCodes)().then(function (codes) {
+                return _this3.setState({ codes: codes });
+            });
         }
     }, {
         key: 'render',
@@ -40309,6 +40309,7 @@ var Page_Admin = function (_PureComponent) {
             var mainClassName = this.mainClassName;
             var admin = this.props.admin;
 
+            console.log('render', this.state.codes);
 
             return _react2.default.createElement(
                 'div',
