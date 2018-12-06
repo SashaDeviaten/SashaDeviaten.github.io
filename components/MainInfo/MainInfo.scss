@@ -1,0 +1,22 @@
+@import "../../node_modules/bootstrap/dist/css/bootstrap-grid.css";
+
+.MainInfo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  &__adress {
+    font-style: italic;
+  }
+  &__mail {
+
+  }
+  &__tel {
+    img {
+      width: 14px;
+      margin-right: 5px;
+    }
+  }
+}

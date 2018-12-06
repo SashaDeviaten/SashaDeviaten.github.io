@@ -1,0 +1,39 @@
+@import "../../node_modules/bootstrap/dist/css/bootstrap-grid.css";
+
+.Page_Clients {
+
+  .imagesWrap {
+    margin: 40px 0;
+    border-radius: 10px;
+    animation: AnimationOdd 8s infinite;
+    padding: 20px;
+
+    .imgWrap {
+      :hover {
+        animation: AnimationEven 8s infinite;
+        cursor: pointer;
+      }
+
+      .image {
+        width: 100%;
+        margin: 20px 0;
+      }
+    }
+
+  }
+
+
+
+  @keyframes AnimationOdd
+  {
+    from { box-shadow: 5px 5px 80px blue; background-color: rgba(255, 0, 255, 0.15); color: blue}
+    50% { box-shadow: 5px 5px 80px magenta; background-color: rgba(110, 177, 255, 0.15); color: magenta}
+    to { box-shadow: 5px 5px 80px blue; background-color: rgba(255, 0, 255, 0.15); color: blue}
+  }
+  @keyframes AnimationEven
+  {
+    from { box-shadow: 5px 5px 60px magenta; background-color: rgba(110, 177, 255, 0.15); color: magenta}
+    50% { box-shadow: 5px 5px 60px blue; background-color: rgba(255, 0, 255, 0.15); color: blue}
+    to { box-shadow: 5px 5px 60px magenta; background-color: rgba(110, 177, 255, 0.15); color: magenta}
+  }
+}

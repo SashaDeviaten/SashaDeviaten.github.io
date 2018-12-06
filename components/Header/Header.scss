@@ -1,0 +1,22 @@
+@import "../../node_modules/bootstrap/dist/css/bootstrap-grid.css";
+
+.Header {
+  position: fixed;
+  top: 0;
+  background-image: linear-gradient(to top, #0077FF, white 40%, #0077FF);
+  width: 100%;
+  z-index: 10;
+  &__logo {
+    img {
+      width: 100%;
+      margin: auto;
+      max-width: 350px;
+      display: block;
+    }
+  }
+  .mainInfoWrap {
+    @media (max-width: 576px) {
+      display: none;
+    }
+  }
+}

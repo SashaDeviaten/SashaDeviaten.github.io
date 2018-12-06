@@ -2,32 +2,38 @@ const path = require('path');
 
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-const extractCSS = new ExtractTextPlugin({
-    filename: "bundle.css"
-});
-
 module.exports = {
-    entry: "./App.js", // основной файл приложения
-    output:{
-        path: __dirname, // путь к каталогу выходных файлов
-        filename: "bundle.js"  // название создаваемого файла
+    entry: {
+        main: ['babel-polyfill', './App.js']
     },
-    module:{
+    output:{ 
+        path: __dirname, // путь к каталогу выходных файлов
+        filename: "bundle.js"  // название создаваемого файла 
+    }, 
+    module:{ 
         rules:[
-            {
+            { 
                 test: /\.jsx?$/, // какие файлы обрабатывать
                 exclude: /node_modules/, // какие файлы пропускать
                 use: { loader: "babel-loader" }
             },
+
             {
-                test: /\.css$/,
-                use: extractCSS.extract({
-                    use: ["css-loader"]
+                test: /\.(css|sass|scss)$/,
+                use: ExtractTextPlugin.extract({
+                    use: ['css-loader', 'sass-loader'],
                 })
+            },
+            {
+                test: /\.(png|jpg|gif|svg|woff|woff2|eot|ttf|otf)$/,
+                use: 'file-loader'
             }
-        ]
+
+        ] 
     },
     plugins: [
-        extractCSS
+        new ExtractTextPlugin({
+            filename: 'bundle.css'
+        }),
     ]
-}
+};

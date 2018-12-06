@@ -1,0 +1,75 @@
+@import "../../node_modules/bootstrap/dist/css/bootstrap-grid.css";
+
+.Page_Reviews {
+  .tile {
+    padding: 20px;
+  }
+
+  .reviewsPhoto {
+    max-width: 100%;
+    border-radius: 50%;
+    @media (max-width: 767px) {
+      display: block;
+      margin: auto;
+      max-width: 50%;
+    }
+    @media (max-width: 575px) {
+      max-width: 75%;
+    }
+  }
+
+  .reviewsName {
+    font-size: 26px;
+    font-style: italic;
+    text-align: right;
+    font-weight: bold;
+    @media (max-width: 575px) {
+      font-size: 22px;
+    }
+  }
+
+  .reviewsText {
+    font-size: 20px;
+    font-style: italic;
+    margin-bottom: 20px;
+    @media (max-width: 575px) {
+      font-size: 18px;
+    }
+  }
+
+  .reviewsDate {
+    text-align: right;
+    font-style: italic;
+    font-size: 16px;
+  }
+
+
+  .reviewsStarsWrap {
+    margin-bottom: 20px;
+  }
+
+  .star {
+    height: 25px;
+    width: 25px;
+    margin: 2px;
+    display: inline-block;
+    clip-path: polygon(
+                    50% 0%,
+                    63% 38%,
+                    100% 38%,
+                    69% 59%,
+                    82% 100%,
+                    50% 75%,
+                    18% 100%,
+                    31% 59%,
+                    0% 38%,
+                    37% 38%
+    );
+    background-color: gray;
+  }
+
+  .star.light {
+    background-color: yellow;
+  }
+
+}

@@ -1,0 +1,68 @@
+@import "../../node_modules/bootstrap/dist/css/bootstrap-grid.css";
+
+.Footer {
+  background-image: linear-gradient(to top, #0000FF, white 40%, #0000FF);
+  position: relative;
+  @media (max-width: 991px) {
+    display: none;
+  }
+  @media (max-width: 576px) {
+    display: block;
+    .leftBlock, .creator {
+      display: none;
+    }
+    .rightBlock {
+      div.location, div.tel {
+        margin-bottom: 0;
+      }
+      .mail {
+        margin-bottom: 20px;
+      }
+    }
+
+  }
+
+  .leftBlock {
+    img {
+      width: 75%;
+    }
+  }
+
+  .rightBlock {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    .location {
+      max-width: 230px;
+      margin-bottom: 15px;
+      font-style: italic;
+      text-align: center;
+    }
+    .tel {
+      margin-bottom: 10px;
+      img {
+        width: 14px;
+        margin-right: 5px;
+      }
+    }
+  }
+  .copyright {
+    margin-bottom: 15px;
+    text-align: center;
+    font-style: italic;
+  }
+  .creator {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    img {
+      width: 20px;
+      margin-bottom: -4px;
+      margin-right: 7px;
+    }
+  }
+
+}

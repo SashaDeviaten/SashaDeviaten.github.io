@@ -1,0 +1,97 @@
+.Page_Admin {
+  .password {
+    margin: 50px auto;
+    input {
+      height: 30px;
+      border: 1px solid gray;
+      border-radius: 5px;
+      padding: 5px;
+    }
+
+    button {
+      margin-left: 15px;
+      height: 30px;
+      width: 100px;
+      border-radius: 5px;
+      background-color: blue;
+      border: none;
+      color: white;
+      padding: 5px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .codes {
+    margin: 50px auto;
+    .codesTitle {
+      font-weight: bold;
+      font-size: 30px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    .codesTable {
+      border-radius: 5px;
+      background-color: #9BCAFF;
+      width: 500px;
+      @media (max-width: 576px) {
+        width: auto;
+      }
+      .codesTableWrap {
+        .codeRow {
+          display: flex;
+          justify-content: space-around;
+          position: relative;
+          .cell {
+            flex: 0 0 33%;
+            padding: 15px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+          }
+          .action {
+            display: flex;
+            justify-content: center;
+          }
+          button {
+            background: none;
+            padding: 5px;
+            font-weight: bold;
+            color: #9BCAFF;
+            border-radius: 3px;
+            border: 2px solid rgba(0,0,0,0);
+            &:hover {
+              cursor: pointer;
+              border-color: white;
+              color: white
+            }
+          }
+          &:hover {
+            background-color: blue;
+            color:white;
+          }
+        }
+
+
+      }
+
+      .codesHeaderWrap {
+        display: flex;
+        background-color: blue;
+        color: white;
+        border-radius: 5px 5px 0 0;
+        .codesHeader {
+          flex: 0 0 33%;
+          font-weight: bold;
+          font-size: 20px;
+          text-align: center;
+        }
+      }
+
+    }
+
+
+  }
+
+
+}

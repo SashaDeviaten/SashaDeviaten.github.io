@@ -1,0 +1,87 @@
+@import "../../node_modules/bootstrap/dist/css/bootstrap-grid.css";
+
+.Page_Master {
+
+    .master {
+      &__photo {
+        img {
+          width: 100%;
+          @media (max-width: 991px) {
+            width: 40%;
+            display: block;
+            margin: auto;
+          }
+          @media (max-width: 767px) {
+            width: 50%;
+          }
+        }
+      }
+      &__text {
+        font-style: italic;
+        font-size: 24px;
+        text-align: center;
+        @media (max-width: 991px) {
+          margin-bottom: 20px;
+        }
+        @media (max-width: 575px) {
+          font-size: 20px;
+        }
+      }
+      &__name {
+        text-align: center;
+        font-size: 48px;
+        font-style: italic;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        @media (max-width: 991px) {
+          font-size: 40px;
+        }
+        @media (max-width: 575px) {
+          font-size: 32px;
+        }
+      }
+      &__ico {
+        text-align: center;
+        img {
+          width: 15%;
+        }
+        @media (max-width: 991px) {
+          display: none;
+        }
+      }
+    }
+
+  .images {
+    img {
+      width: 100%;
+    }
+    .longPrizeImg {
+      @media (max-width: 991px) {
+        display: none;
+      }
+    }
+    .shortPrizeImg {
+      display: none;
+      @media (max-width: 991px) {
+        display: block;
+        margin: 0 auto 20px;
+        width: 80%;
+
+      }
+      @media (max-width: 767px) {
+        width: 100%;
+      }
+    }
+    .title {
+      text-align: center;
+      font-size: 36px;
+      font-style: italic;
+      font-weight: bold;
+      color: #E855A2;
+      margin: 20px;
+      @media (max-width: 767px) {
+        font-size: 28px;
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+body {
+  a {
+    color: unset;
+    text-decoration: none;
+  }
+  margin: 0;
+  .link {
+    color: #23018c;
+    transition: color 0.3s ease;
+    &:hover {
+      cursor: pointer;
+      color: #ff002f;
+    }
+  }
+  .odd {
+    animation: AnimationOdd 8s infinite;
+  }
+
+  .even {
+    animation: AnimationEven 8s infinite;
+  }
+
+  @keyframes AnimationOdd
+  {
+    from { box-shadow: 5px 5px 80px blue; background-color: rgba(255, 0, 255, 0.15); color: blue}
+    50% { box-shadow: 5px 5px 80px magenta; background-color: rgba(110, 177, 255, 0.15); color: magenta}
+    to { box-shadow: 5px 5px 80px blue; background-color: rgba(255, 0, 255, 0.15); color: blue}
+  }
+  @keyframes AnimationEven
+  {
+    from { box-shadow: 5px 5px 80px magenta; background-color: rgba(110, 177, 255, 0.15); color: magenta}
+    50% { box-shadow: 5px 5px 80px blue; background-color: rgba(255, 0, 255, 0.15); color: blue}
+    to { box-shadow: 5px 5px 80px magenta; background-color: rgba(110, 177, 255, 0.15); color: magenta}
+  }
+
+  .pageContent {
+    @media (max-width: 991px) {
+      margin-top: 235px;
+    }
+    @media (max-width: 768px) {
+      margin-top: 185px;
+    }
+    @media (max-width: 576px) {
+      margin-top: 380px;
+    }
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .ma {
+    margin: auto;
+  }
+
+  .tile {
+    border-radius: 10px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    @media (max-width: 576px) {
+      margin: 20px 30px
+    }
+  }
+
+  .ic-close {
+    background: url('../images/icons/ic-close.svg') no-repeat center;
+  }
+
+  button.modalAction {
+    min-width: 100px;
+    padding: 5px 0;
+    background: none;
+    font-weight: bold;
+    font-size: 18px;
+    font-style: italic;
+    color:  rgba(255,255,255,0.6);
+    border: 2px solid rgba(0,0,0,0);
+    &:hover {
+      cursor: pointer;
+      color: blue;
+      border-color: blue ;
+      border-radius: 5px;
+    }
+  }
+
+}

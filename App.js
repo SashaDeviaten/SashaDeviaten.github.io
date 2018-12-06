@@ -1,45 +1,23 @@
 "use strict";
 
-import {mainBlock} from "./components/MainBlock";
-import './components/App.css';
-import {rulesBlock} from "./components/RulesBlock";
-import {buildRecordBlock} from "./components/RecordsBlock";
-import {buildGame} from "./components/Game";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-window.onhashchange=switchToStateFromURLHash;
+import { Provider } from 'react-redux';
 
+import Main from './core/Main';
+import {createStore} from "redux";
+import combinedReducer from "./core/reducers";
+import BrowserRouter from "react-router-dom/es/BrowserRouter";
 
-let SPAState={};
-let app= document.getElementById('app');
-app.addEventListener('contextmenu', (e)=>e.preventDefault());
+const store = createStore(combinedReducer, {}, window.devToolsExtension ? window.devToolsExtension() : f => f);
 
-function switchToStateFromURLHash() {
-    let URLHash=window.location.hash;
-    let stateStr=URLHash.substr(1);
+ReactDOM.render(
+    <Provider store={store}>
+        <BrowserRouter>
+            <Main/>
+        </BrowserRouter>
+    </Provider>
 
-    if ( stateStr!="" ) {
-        let parts=stateStr.split("_");
-        SPAState={ pagename: parts[0] };
-    }
-    else
-        SPAState={pagename:'Main'};
-
-    app.innerHTML='';
-    switch ( SPAState.pagename ) {
-        case 'Main':
-            app.innerHTML=mainBlock;
-            break;
-        case 'Game':
-            app.appendChild(buildGame());
-            break;
-        case 'Rules':
-            app.appendChild(rulesBlock);
-            break;
-        case 'Records':
-            app.appendChild(buildRecordBlock());
-            break;
-    }
-
-}
-
-switchToStateFromURLHash();
+  , document.getElementById('container') 
+);
