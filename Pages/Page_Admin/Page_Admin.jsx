@@ -11,8 +11,10 @@ class Page_Admin extends PureComponent {
 
     componentDidMount () {
         window.scrollTo(0, 360);
-        this.props.blockFlyGif()
+        this.props.blockFlyGif();
+        getCodes().then(codes => this.setState({codes}))
     }
+
 
     state = {
         codes: []
@@ -26,10 +28,7 @@ class Page_Admin extends PureComponent {
     };
 
     checkPassword = () => {
-        if (this.password === 'Vojstom') {
-            this.props.verifiedAdmin();
-            getCodes().then(codes => this.setState({codes}))
-        }
+        if (this.password === 'Vojstom') this.props.verifiedAdmin();
         else {
             customConfirm({
                 content: 'Неверный пароль',
@@ -64,6 +63,7 @@ class Page_Admin extends PureComponent {
         const {mainClassName} = this;
 
         const {admin} = this.props;
+        console.log('render', this.state.codes)
 
         return (
 
