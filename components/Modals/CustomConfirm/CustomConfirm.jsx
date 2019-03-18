@@ -9,6 +9,12 @@ export const customConfirm = config => modal({
 });
 
 class CustomConfirm extends PureComponent {
+    constructor(props) {
+        super(props);
+        document.body.style.overflowY = 'hidden';
+        setInterval(() => this.setState({isOpen:true}), 150)
+    }
+
     static propTypes = {
         header: PropTypes.any,
         cancel: PropTypes.any,
@@ -25,12 +31,9 @@ class CustomConfirm extends PureComponent {
     };
 
     state = {
-        isOpen: true
+        isOpen: false
     };
 
-    componentDidMount () {
-        document.body.style.overflowY = 'hidden'
-    }
 
 
     componentWillUnmount () {
