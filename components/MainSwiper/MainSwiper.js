@@ -23,6 +23,7 @@ class MainSwiper extends React.PureComponent {
             pagination: {
                 clickable: true
             },
+            autoHeight: true
         },
     };
 
@@ -59,6 +60,7 @@ class MainSwiper extends React.PureComponent {
 
 
     render() {
+        console.log('render')
         const {
             mainClassName,
             assignSwiperContainerRef, assignSwiperPrevButtonRef, assignSwiperNextButtonRef, assignSwiperPaginationRef,

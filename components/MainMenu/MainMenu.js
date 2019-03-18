@@ -39,7 +39,7 @@ class MainMenu extends React.PureComponent {
 
     tabClicked = (e) => {
         const path = e.currentTarget.dataset.path;
-        this.setState({activePath: path}, () => (path.length > 1) ? window.scrollTo(0, 360) : window.scrollTo(0, 0))
+        this.setState({activePath: path}, () => (path.length > 1) ? window.scrollTo(0, 500) : window.scrollTo(0, 0))
     };
 
     render() {
