@@ -1,13 +1,14 @@
 {
-  "name": "reduxdemo",
+  "name": "Juliet",
   "version": "1.0.0",
-  "description": "Redux demo",
+  "description": "Juliet site",
+  "homepage": "https://sashadeviaten.github.io",
   "main": "App.js",
   "scripts": {
     "build": ".\\node_modules\\.bin\\webpack",
     "builddev": ".\\node_modules\\.bin\\webpack-dev-server --progress --colors --history-api-fallback"
   },
-  "author": "",
+  "author": "Sasha Deviaten",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.0",
