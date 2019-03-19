@@ -42,7 +42,7 @@ class Footer extends React.PureComponent {
                             </div>
                         </div>
                             <div className={'creator'}>
-                                <NavLink to={'/admin'} onClick={()=> {this.setState()}}>Powered by</NavLink><br/>
+                                Powered by <br/>
                                 <a href={'https://vk.com/id133303052'} className={'link'} target="_blank">
                                 <img src = '../../images/VK.png'/>
                                 Sasha Deviaten
