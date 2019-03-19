@@ -49698,8 +49698,6 @@ var Footer = function (_React$PureComponent) {
     _createClass(Footer, [{
         key: 'render',
         value: function render() {
-            var _this2 = this;
-
             var mainClassName = this.mainClassName;
 
 
@@ -49763,13 +49761,7 @@ var Footer = function (_React$PureComponent) {
                         _react2.default.createElement(
                             'div',
                             { className: 'creator' },
-                            _react2.default.createElement(
-                                _reactRouterDom.NavLink,
-                                { to: '/admin', onClick: function onClick() {
-                                        _this2.setState();
-                                    } },
-                                'Powered by'
-                            ),
+                            'Powered by ',
                             _react2.default.createElement('br', null),
                             _react2.default.createElement(
                                 'a',
