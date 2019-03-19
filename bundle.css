@@ -2609,6 +2609,7 @@ html {
         text-align: center; }
 .CustomModal {
   position: absolute;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -3412,8 +3413,7 @@ button.swiper-pagination-bullet {
           background-image: linear-gradient(to left, #00ccff, #0000ff); }
     .MainSwiper .main-slider .main-slider__slide {
       flex: 0 0 auto;
-      width: 100vw;
-      height: 360px; }
+      width: 100vw; }
       .MainSwiper .main-slider .main-slider__slide.main-slider__slide_small {
         height: 240px; }
 .Footer {

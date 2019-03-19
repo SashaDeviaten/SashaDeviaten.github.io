@@ -7824,38 +7824,39 @@ var customConfirm = exports.customConfirm = function customConfirm(config) {
 var CustomConfirm = function (_PureComponent) {
     _inherits(CustomConfirm, _PureComponent);
 
-    function CustomConfirm() {
-        var _ref;
-
-        var _temp, _this, _ret;
-
+    function CustomConfirm(props) {
         _classCallCheck(this, CustomConfirm);
 
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-        }
+        var _this = _possibleConstructorReturn(this, (CustomConfirm.__proto__ || Object.getPrototypeOf(CustomConfirm)).call(this, props));
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CustomConfirm.__proto__ || Object.getPrototypeOf(CustomConfirm)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-            isOpen: true
-        }, _this.close = function () {
+        _this.state = {
+            isOpen: false
+        };
+
+        _this.close = function () {
             _this.setState({
                 isOpen: false
             });
-        }, _this.confirm = function () {
+        };
+
+        _this.confirm = function () {
             _this.close();
             _this.props.resolve(true);
-        }, _this.cancel = function () {
+        };
+
+        _this.cancel = function () {
             _this.close();
             _this.props.resolve(false);
-        }, _temp), _possibleConstructorReturn(_this, _ret);
+        };
+
+        document.body.style.overflowY = 'hidden';
+        setInterval(function () {
+            return _this.setState({ isOpen: true });
+        }, 150);
+        return _this;
     }
 
     _createClass(CustomConfirm, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            document.body.style.overflowY = 'hidden';
-        }
-    }, {
         key: 'componentWillUnmount',
         value: function componentWillUnmount() {
             document.body.style.overflowY = 'auto';
@@ -13469,7 +13470,7 @@ module.exports = function (regExp, replace) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
+/* WEBPACK VAR INJECTION */(function(process) {
 
 var _react = __webpack_require__(1);
 
@@ -13506,10 +13507,11 @@ _reactDom2.default.render(_react2.default.createElement(
     { store: store },
     _react2.default.createElement(
         _BrowserRouter2.default,
-        null,
+        { basename: process.env.PUBLIC_URL },
         _react2.default.createElement(_Main2.default, null)
     )
 ), document.getElementById('container'));
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
 
 /***/ }),
 /* 386 */
@@ -41124,7 +41126,7 @@ var MainMenu = function (_React$PureComponent) {
         _this.tabClicked = function (e) {
             var path = e.currentTarget.dataset.path;
             _this.setState({ activePath: path }, function () {
-                return path.length > 1 ? window.scrollTo(0, 360) : window.scrollTo(0, 0);
+                return path.length > 1 ? window.scrollTo(0, 500) : window.scrollTo(0, 0);
             });
         };
 
@@ -41364,6 +41366,7 @@ var MainSwiper = function (_React$PureComponent) {
     }, {
         key: 'render',
         value: function render() {
+            console.log('render');
             var mainClassName = this.mainClassName,
                 assignSwiperContainerRef = this.assignSwiperContainerRef,
                 assignSwiperPrevButtonRef = this.assignSwiperPrevButtonRef,
@@ -41442,7 +41445,8 @@ MainSwiper.defaultProps = {
         },
         pagination: {
             clickable: true
-        }
+        },
+        autoHeight: true
     }
 };
 exports.default = (0, _reactRedux.connect)(function (_ref2) {
