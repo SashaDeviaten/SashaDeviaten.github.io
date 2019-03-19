@@ -9,12 +9,15 @@ import Main from './core/Main';
 import {createStore} from "redux";
 import combinedReducer from "./core/reducers";
 import BrowserRouter from "react-router-dom/es/BrowserRouter";
+import { createBrowserHistory } from 'history';
+
+const history = createBrowserHistory();
 
 const store = createStore(combinedReducer, {}, window.devToolsExtension ? window.devToolsExtension() : f => f);
 
 ReactDOM.render(
     <Provider store={store}>
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <BrowserRouter history={history} basename={process.env.PUBLIC_URL}>
             <Main/>
         </BrowserRouter>
     </Provider>
