@@ -49573,7 +49573,7 @@ var Footer = function (_React$PureComponent) {
                             _react2.default.createElement(
                                 'div',
                                 { className: 'copyright' },
-                                '\xA9 2018 \u0421\u0430\u043B\u043E\u043D \u0433\u0440\u0443\u043C\u0438\u043D\u0433\u0430 \u0414\u0436\u0443\u043B\u044C\u0435\u0442\u0442\u0430'
+                                '\xA9 2019 \u0421\u0430\u043B\u043E\u043D \u0433\u0440\u0443\u043C\u0438\u043D\u0433\u0430 \u0414\u0436\u0443\u043B\u044C\u0435\u0442\u0442\u0430'
                             )
                         ),
                         _react2.default.createElement(
