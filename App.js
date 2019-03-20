@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import Main from './core/Main';
 import {createStore} from "redux";
 import combinedReducer from "./core/reducers";
-import BrowserRouter from "react-router-dom/es/BrowserRouter";
+import {BrowserRouter} from "react-router-dom";
 import { createBrowserHistory } from 'history';
 
 const history = createBrowserHistory();
