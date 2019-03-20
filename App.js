@@ -11,7 +11,9 @@ import combinedReducer from "./core/reducers";
 import {BrowserRouter} from "react-router-dom";
 import { createBrowserHistory } from 'history';
 
-const history = createBrowserHistory();
+const history = createBrowserHistory({
+    basename: process.env.PUBLIC_URL,
+});
 
 const store = createStore(combinedReducer, {}, window.devToolsExtension ? window.devToolsExtension() : f => f);
 
