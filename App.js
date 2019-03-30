@@ -15,7 +15,7 @@ const store = createStore(combinedReducer, {}, window.devToolsExtension ? window
 
 ReactDOM.render(
     <Provider store={store}>
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <BrowserRouter basename={'/'}>
             <Main/>
         </BrowserRouter>
     </Provider>
