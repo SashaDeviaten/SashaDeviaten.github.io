@@ -38,7 +38,7 @@ class Footer extends React.PureComponent {
                         </div>
                         <div className={'col-12'}>
                             <div className={'copyright'}>
-                            © 2019 Салон груминга Джульетта
+                            © 2018 Салон груминга Джульетта
                             </div>
                         </div>
                             <div className={'creator'}>
