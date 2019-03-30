@@ -16,7 +16,7 @@ class PagesRouter extends React.Component {
         return (
             <Fragment>
                 <Switch>
-                    <Route path="/" exact component={MainPage}/>
+                    <Route path="/main" exact component={MainPage}/>
                     <Route path="/master" component={Page_Master}/>
                     <Route path="/clients" component={Page_Clients}/>
                     <Route path="/reviews" component={Page_Reviews}/>
