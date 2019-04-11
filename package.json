@@ -2,7 +2,7 @@
   "name": "Juliet",
   "version": "1.0.0",
   "description": "Juliet site",
-  "homepage": "https://sashadeviaten.github.io",
+  "homepage": "/",
   "main": "App.js",
   "scripts": {
     "build": ".\\node_modules\\.bin\\webpack",

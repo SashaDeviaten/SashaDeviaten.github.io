@@ -9,7 +9,7 @@ export default new Config().extend('webpack.config.js').merge({
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: JSON.stringify('production'),
-                PUBLIC_URL: 'https://sashadeviaten.github.io'
+                PUBLIC_URL: '/'
             }
         }),
         new webpack.optimize.UglifyJsPlugin({
