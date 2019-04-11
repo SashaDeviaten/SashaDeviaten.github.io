@@ -15,7 +15,7 @@ const store = createStore(combinedReducer, {}, window.devToolsExtension ? window
 
 ReactDOM.render(
     <Provider store={store}>
-        <BrowserRouter basename={'/main'}>
+        <BrowserRouter basename={'/'}>
             <Main/>
         </BrowserRouter>
     </Provider>
