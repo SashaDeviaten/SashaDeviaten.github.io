@@ -36,6 +36,6 @@
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
-    "swiper": "^4.3.5"
+    "swiper": "^6.5.1"
   }
 }
